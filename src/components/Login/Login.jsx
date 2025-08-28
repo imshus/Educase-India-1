@@ -8,35 +8,28 @@ const Login = () => {
   const [error, setError] = useState("");
 
   const handleLogin = (e) => {
-    e.preventDefault(); // prevent page refresh
-
-    // Get stored user data from localStorage
+    e.preventDefault(); 
     const storedUser = JSON.parse(localStorage.getItem("formData"));
-
     if (!storedUser) {
       setError("No account found. Please register first.");
       return;
     }
-
-    // Match entered credentials with localStorage
     if (storedUser.email === email && storedUser.password === password) {
       setError("");
-      navigate("/profile"); // redirect to profile page
+      navigate("/profile");
     } else {
       setError("Invalid email or password.");
     }
   };
-
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col p-4 w-full lg:border lg:border-gray-300 lg:shadow-md lg:w-1/5 min-h-[90%]">
+      <div className="flex flex-col p-4 w-full lg:border lg:border-gray-300 lg:shadow-md lg:w-1/4 min-h-[83%]">
         <h2 className="text-2xl font-bold mb-1">
           Signin to your<br />PopX account
         </h2>
         <p className="text-sm text-gray-500 mb-8">
           Lorem ipsum dolor sit amet,<br />consectetur adipiscing elit,
         </p>
-
         <form onSubmit={handleLogin} className="space-y-6">
           <div className="relative">
             <div className="absolute -top-2 left-3 bg-white px-1 text-xs font-medium text-purple-600">
@@ -64,9 +57,7 @@ const Login = () => {
               required
             />
           </div>
-
           {error && <p className="text-red-500 text-sm">{error}</p>}
-
           <button
             type="submit"
             className="w-full bg-purple-600 text-white font-semibold py-2 rounded-md hover:bg-purple-700 transition"
@@ -78,5 +69,4 @@ const Login = () => {
     </div>
   );
 };
-
 export default Login;

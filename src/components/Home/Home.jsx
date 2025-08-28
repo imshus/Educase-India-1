@@ -3,7 +3,7 @@ const Home = () => {
     const navigate=useNavigate();
     return (
         <div className="flex justify-center items-center h-screen">
-            <div className="flex flex-col justify-end p-4 lg:border lg:border-gray-300 lg:shadow-md lg:w-1/5 min-h-[90%]">
+            <div className="flex flex-col justify-end p-4 lg:border lg:border-gray-300 lg:shadow-md lg:w-1/4 min-h-[83%]">
                 <span className="text-xl font-bold">Welcome to PopX</span>
                 <span className="text-sm mt-1">Lorem ipsum dolor sit amet consectetur, adipisicing elit.</span>
                 <div>

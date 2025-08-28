@@ -11,6 +11,7 @@ const Signup = () => {
     isAgency: '',
   });
   const handleChange = (e) => {
+    e.preventDefault()
     const { name, value, } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
     localStorage.setItem("formData",JSON.stringify(formData))
@@ -18,9 +19,9 @@ const Signup = () => {
 
   return (
     <div className="flex justify-center items-center h-screen">
-      <div className="flex flex-col justify-start w-full p-4 lg:border lg:border-gray-300 lg:shadow-md lg:w-1/5 min-h-[90%]">
+      <div className="flex flex-col justify-start w-full p-4 lg:border lg:border-gray-300 lg:shadow-md lg:w-1/4 min-h-[83%]">
         <h2 className="text-2xl font-bold mb-8">Create your<br />PopX account</h2>
-        <form className="space-y-6">
+        <form onSubmit={handleChange} method="POST" className="space-y-6">
           <div className="relative">
             <div className="absolute -top-2 left-3 bg-white px-1 text-xs font-medium text-purple-600">
               Full Name<span className="text-red-500">*</span>
