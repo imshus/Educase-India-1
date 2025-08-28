@@ -1,6 +1,7 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
 import { useEffect,useState } from "react"
+import girl from "../../assets/girl.png";
 const Profile = () => {
   const [user, setUser] = useState(null);
   useEffect(() => {
@@ -16,7 +17,7 @@ const Profile = () => {
                 <div className="border border-gray-200 p-4 rounded">
                     <div className="flex">
                         <div className="flex flex-row items-end relative">
-                           <img src="src/assets/girl.png" alt="Profile" />
+                           <img src={girl} className="h-16 w-16" alt="Profile" />
                            <p className="absolute right-0 rounded-2xl text-sm text-white border bg-[#7B68EE] border-gray-200 w-6 h-6 flex items-center justify-center cursor-pointer"><FontAwesomeIcon icon={faCamera}/></p>
                         </div>
                         <span className="pl-4">
