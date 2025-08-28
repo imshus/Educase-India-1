@@ -3,8 +3,8 @@ import { faCamera } from '@fortawesome/free-solid-svg-icons'
 const Profile = () => {
   return (
     <div className="flex justify-center items-center h-screen">
-            <div className="flex flex-col justify-start lg:border lg:border-gray-300 lg:shadow-md lg:w-1/4 min-h-[90%]">
-                <span className="text-xl p-4">Account Settings</span>
+            <div className="flex flex-col justify-start lg:border lg:border-gray-300 lg:shadow-md lg:w-1/5 min-h-[90%]">
+                <span className="text-xl lg:p-4">Account Settings</span>
                 <div className="border border-gray-200 p-4 rounded">
                     <div className="flex">
                         <div className="flex flex-row items-end relative">
