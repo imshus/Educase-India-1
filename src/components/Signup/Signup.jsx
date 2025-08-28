@@ -1,7 +1,7 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { useNavigate } from 'react-router-dom';
 const Signup = () => {
-  const navigate=useNavigate()
+  const navigate = useNavigate()
   const [formData, setFormData] = useState({
     fullName: '',
     phone: '',
@@ -11,9 +11,11 @@ const Signup = () => {
     isAgency: '',
   });
   const handleChange = (e) => {
-    const { name, value } = e.target;
+    const { name, value, } = e.target;
     setFormData(prev => ({ ...prev, [name]: value }));
+    localStorage.setItem("formData",JSON.stringify(formData))
   };
+
   return (
     <div className="flex justify-center items-center h-screen">
       <div className="flex flex-col justify-start w-full p-4 lg:border lg:border-gray-300 lg:shadow-md lg:w-1/5 min-h-[90%]">
@@ -29,6 +31,7 @@ const Signup = () => {
               value={formData.fullName}
               onChange={handleChange}
               placeholder=""
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-800 focus:outline-none focus:ring-1 focus:ring-purple-600"
             />
           </div>
@@ -42,6 +45,7 @@ const Signup = () => {
               value={formData.phone}
               onChange={handleChange}
               placeholder=""
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-800 focus:outline-none focus:ring-1 focus:ring-purple-600"
             />
           </div>
@@ -55,6 +59,7 @@ const Signup = () => {
               value={formData.email}
               onChange={handleChange}
               placeholder=""
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-800 focus:outline-none focus:ring-1 focus:ring-purple-600"
             />
           </div>
@@ -68,6 +73,7 @@ const Signup = () => {
               value={formData.password}
               onChange={handleChange}
               placeholder=""
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-800 focus:outline-none focus:ring-1 focus:ring-purple-600"
             />
           </div>
@@ -81,6 +87,7 @@ const Signup = () => {
               value={formData.company}
               onChange={handleChange}
               placeholder=""
+              required
               className="w-full px-3 py-2 border border-gray-300 rounded-md text-sm text-gray-800 focus:outline-none focus:ring-1 focus:ring-purple-600"
             />
           </div>
@@ -94,6 +101,7 @@ const Signup = () => {
                   type="radio"
                   name="isAgency"
                   value="yes"
+                  required
                   checked={formData.isAgency === 'yes'}
                   onChange={handleChange}
                   className="accent-purple-600"
@@ -105,6 +113,7 @@ const Signup = () => {
                   type="radio"
                   name="isAgency"
                   value="no"
+                  required
                   checked={formData.isAgency === 'no'}
                   onChange={handleChange}
                   className="accent-purple-600"
@@ -115,7 +124,7 @@ const Signup = () => {
           </div>
           <button
             type="submit"
-            onClick={()=>navigate('/login')
+            onClick={() => navigate('/login')
             }
             className="mt-64 w-full bg-purple-600 text-white font-semibold py-2 rounded-md hover:bg-purple-700 transition"
           >

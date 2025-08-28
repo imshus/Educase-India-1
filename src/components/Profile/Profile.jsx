@@ -1,6 +1,12 @@
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome"
 import { faCamera } from '@fortawesome/free-solid-svg-icons'
+import { useEffect } from "react"
 const Profile = () => {
+  function getData(){
+    const formData=localStorage.getItem('formData')
+    console.log(formData)
+  }
+  getData();
   return (
     <div className="flex justify-center items-center h-screen">
             <div className="flex flex-col justify-start lg:border lg:border-gray-300 lg:shadow-md lg:w-1/5 min-h-[90%]">
@@ -12,7 +18,7 @@ const Profile = () => {
                            <p className="absolute right-0 rounded-2xl text-sm text-white border bg-[#7B68EE] border-gray-200 w-6 h-6 flex items-center justify-center cursor-pointer"><FontAwesomeIcon icon={faCamera}/></p>
                         </div>
                         <span className="pl-4">
-                            <p className="text-lg font-bold">Jane Doe</p>
+                            <p id="profile-name" className="text-lg font-bold">Jane Doe</p>
                             <p className="text-sm">jane.doe@example.com</p>
                         </span>
                     </div>
